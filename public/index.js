@@ -18,11 +18,11 @@ var DRIVY = DRIVY || {};
 
   button.addEventListener('click', function onClick () {
     var car = DRIVY.getCar();
-    var begin = document.querySelector('.begin').value;
-    var end = document.querySelector('.end').value;
-    var distance = document.querySelector('.distance').value;
-    var option = document.querySelector('.option').value;
-
+    var begin = document.querySelector('#begin').value;
+    var end = document.querySelector('#end').value;
+    var distance = document.querySelector('#distance').value;
+    var option = document.querySelector('#option').value;
+	alert(option);
     var actors = DRIVY.payActors(car, begin, end, distance, option);
 
     render(actors);

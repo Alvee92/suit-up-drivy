@@ -1,33 +1,200 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
+
+<style>
+.form-group{
+		
+	}
+	.form-control{
+		max-width: 20%;
+		margin-left: 40%;
+	}
+.container{
+
+max-width: 100%;
+}  
+	
+</style>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Drivy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-      {{/actors}}
-    </script>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Drivy</h1>
+                        <h3>Compute your total rental price</h3>
+                        <hr class="intro-divider">
+						
+						<!-- Form -->
+						<form>
+							<fieldset class="form-group" id="car" id="rental">
+								<label>Car model</label>
+								<input id="model" class="form-control" class="model" type="text" placeholder="Car model"/>
+								
+							
+								<label>Price per day</label>
+								<input id="price-by-day" class="form-control" class="price-by-day" type="number" placeholder="Enter a price"/>
+								
+							
+								<label>Price per km</label>
+								<input id="price-by-km" type="number" class="form-control" class="price-by-km" id="PricePerKm" placeholder="Enter a price">
+								
+								<label>Begining date</label>
+								<input id="begin" class="form-control"class="begin" type="date" placeholder="Rental begin date"/>
+								
+								<label>Ending date</label>
+								<input id="end" class="form-control" class="end" type="date" placeholder="Rental end date"/>
+								
+								<label>Distance in km</label>
+								<input id="distance" class="form-control" class="distance" type="number" placeholder="Distance in km"/>
+								
+								<div class="checkbox">
+								<label><input id="option" type="checkbox" value="">Deductible option</label>
+								</div>
+							</fieldset>
+							
+							<button class="btn btn-primary" id="compute">
+							Compute
+							</button>
+							
+							
+							
+						<div id="actors"></div>
+						<script id="template" type="x-tmpl-mustache">
+							{{#actors}}
+								<div class="actor">
+								<span>{{who}}</span>
+								alert(who);
+								<span>{{type}}</span>
+								<span>{{amount}}</span>
+						</div>
+							{{/actors}}
+						</script>
+	</div>
+	
+	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
-  </body>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/drivy" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.drivy.com/" class="btn btn-default btn-lg"> <i ></i> <span class="network-name">Website</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/drivy" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    
+	
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	
+    <!-- /.banner -->
+
+    <!-- Footer -->
+	
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+
 </html>
